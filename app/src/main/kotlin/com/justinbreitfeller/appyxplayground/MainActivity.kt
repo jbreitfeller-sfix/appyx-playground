@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity(), IntegrationPointProvider {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        appyxIntegrationPoint = createIntegrationPoint(savedInstanceState = savedInstanceState)
         setContent {
             AppyxPlaygroundTheme {
                 // A surface container using the 'background' color from the theme
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity(), IntegrationPointProvider {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    TabbedNavigationApp(createIntegrationPoint(savedInstanceState = savedInstanceState))
+                    TabbedNavigationApp(appyxIntegrationPoint)
                 }
             }
         }
